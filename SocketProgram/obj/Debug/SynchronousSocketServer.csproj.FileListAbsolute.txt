@@ -1,0 +1,11 @@
+C:\Users\dave\Documents\Visual Studio 2015\Projects\SocketServer\bin\Debug\SocketServer.exe.config
+C:\Users\dave\Documents\Visual Studio 2015\Projects\SocketServer\bin\Debug\SocketServer.exe
+C:\Users\dave\Documents\Visual Studio 2015\Projects\SocketServer\bin\Debug\SocketServer.pdb
+C:\Users\dave\Documents\Visual Studio 2015\Projects\SocketServer\obj\Debug\SynchronousSocketServer.csprojResolveAssemblyReference.cache
+C:\Users\dave\Documents\Visual Studio 2015\Projects\SocketServer\obj\Debug\SocketServer.exe
+C:\Users\dave\Documents\Visual Studio 2015\Projects\SocketServer\obj\Debug\SocketServer.pdb
+C:\DAVE\test\SocketProgram\bin\Debug\SocketServer.exe.config
+C:\DAVE\test\SocketProgram\obj\Debug\SocketServer.exe
+C:\DAVE\test\SocketProgram\obj\Debug\SocketServer.pdb
+C:\DAVE\test\SocketProgram\bin\Debug\SocketServer.exe
+C:\DAVE\test\SocketProgram\bin\Debug\SocketServer.pdb
