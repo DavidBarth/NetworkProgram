@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
@@ -81,11 +82,42 @@ namespace BelfastSocketAsync
                     await myClient.ConnectAsync(MyServerIPAddress, serverPort);
                     Console.WriteLine(string.Format("Connected to server IP/Port: {0} / {1}", 
                         MyServerIPAddress, ServerPort));
+
+                    ReadDataAsync(myClient);
+
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
                 }
+            }
+        }
+
+        private async void ReadDataAsync(TcpClient myClient)
+        {
+            try
+            {
+                StreamReader streamReader = new StreamReader(myClient.GetStream());
+                char[] buffer = new char[64];
+                int readByteCount = 0;
+                while (true)
+                {
+                     readByteCount = await streamReader.ReadAsync(buffer, 0, buffer.Length);
+
+                    if(readByteCount <= 0)
+                    {
+                        Console.WriteLine("Disconnected from server");
+                        myClient.Close();
+                        break;
+                    }
+
+                    Console.WriteLine(string.Format("Bytes sent: {0} , String: {1} ", readByteCount.ToString(), new string(buffer)));
+                }
+                Array.Clear(buffer, 0, buffer.Length);
+            }  
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
             }
         }
     }
