@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="BelfastSocketClient.cs" />
     <Compile Include="BelfastSocketServer.cs" />
+    <Compile Include="ISocketClient.cs" />
+    <Compile Include="ISocketServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

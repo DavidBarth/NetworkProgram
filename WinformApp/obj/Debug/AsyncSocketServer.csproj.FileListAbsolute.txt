@@ -31,3 +31,14 @@ C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgram\WinFormApp\ob
 C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgram\WinFormApp\obj\Debug\WinFormApp.Form1.resources
 C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgram\WinFormApp\obj\Debug\WinFormApp.Properties.Resources.resources
 C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgram\WinFormApp\obj\Debug\AsyncSocketServer.csproj.GenerateResource.Cache
+C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\WinFormApp\bin\Debug\WinFormApp.exe.config
+C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\WinFormApp\obj\Debug\WinFormApp.exe
+C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\WinFormApp\obj\Debug\WinFormApp.pdb
+C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\WinFormApp\bin\Debug\WinFormApp.exe
+C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\WinFormApp\bin\Debug\WinFormApp.pdb
+C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\WinFormApp\bin\Debug\BelfastAsync.dll
+C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\WinFormApp\bin\Debug\BelfastAsync.pdb
+C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\WinFormApp\obj\Debug\AsyncSocketServer.csprojResolveAssemblyReference.cache
+C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\WinFormApp\obj\Debug\WinFormApp.Form1.resources
+C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\WinFormApp\obj\Debug\WinFormApp.Properties.Resources.resources
+C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\WinFormApp\obj\Debug\AsyncSocketServer.csproj.GenerateResource.Cache
