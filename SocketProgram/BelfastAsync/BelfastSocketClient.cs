@@ -137,5 +137,13 @@ namespace BelfastSocketAsync
                 Console.WriteLine(ex.ToString());
             }
         }
+
+        public void CloseAndDisconnect()
+        {
+            if (myClient != null && !myClient.Connected)
+            {
+                myClient.Close();
+            }
+        }
     }
 }
