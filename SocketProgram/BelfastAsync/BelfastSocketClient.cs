@@ -12,7 +12,7 @@ namespace BelfastSocketAsync
         int serverPort;
         TcpClient myClient;
 
-        public IPAddress MyServerIPAddress
+        private IPAddress MyServerIPAddress
         {
             get
             {
@@ -32,7 +32,7 @@ namespace BelfastSocketAsync
             return true;
         }
 
-        public int ServerPort
+        private int ServerPort
         {
             get
             {
@@ -56,24 +56,7 @@ namespace BelfastSocketAsync
             return true;
         }
 
-        public async Task SendDataToServer(string userInput)
-        {
-            if (string.IsNullOrEmpty(userInput))
-            {
-                Console.WriteLine("Empty string supplied to send method.");
-                return;
-            }
-            if(myClient != null && myClient.Connected)
-            {
-                StreamWriter clientStreamWriter = new StreamWriter(MyClient.GetStream());
-                clientStreamWriter.AutoFlush = true;
-
-                await clientStreamWriter.WriteAsync(userInput);
-                Console.WriteLine("Data sent...");
-            }
-        }
-
-        public TcpClient MyClient
+        private TcpClient MyClient
         {
             get
             {
@@ -107,6 +90,23 @@ namespace BelfastSocketAsync
                 {
                     Console.WriteLine(ex.ToString());
                 }
+            }
+        }
+
+        public async Task SendDataToServer(string userInput)
+        {
+            if (string.IsNullOrEmpty(userInput))
+            {
+                Console.WriteLine("Empty string supplied to send method.");
+                return;
+            }
+            if (myClient != null && myClient.Connected)
+            {
+                StreamWriter clientStreamWriter = new StreamWriter(MyClient.GetStream());
+                clientStreamWriter.AutoFlush = true;
+
+                await clientStreamWriter.WriteAsync(userInput);
+                Console.WriteLine("Data sent...");
             }
         }
 

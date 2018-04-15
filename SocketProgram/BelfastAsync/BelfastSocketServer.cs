@@ -8,7 +8,7 @@ using System.Text;
 
 namespace BelfastSocketAsync
 {
-    public class BelfastSocketServer
+    public class BelfastSocketServer : ISocketServer
     {
         IPAddress myIP;
         int myPort;
