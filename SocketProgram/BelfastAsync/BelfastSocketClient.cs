@@ -56,6 +56,23 @@ namespace BelfastSocketAsync
             return true;
         }
 
+        public async Task SendDataToServer(string userInput)
+        {
+            if (string.IsNullOrEmpty(userInput))
+            {
+                Console.WriteLine("Empty string supplied to send method.");
+                return;
+            }
+            if(myClient != null && myClient.Connected)
+            {
+                StreamWriter clientStreamWriter = new StreamWriter(MyClient.GetStream());
+                clientStreamWriter.AutoFlush = true;
+
+                await clientStreamWriter.WriteAsync(userInput);
+                Console.WriteLine("Data sent...");
+            }
+        }
+
         public TcpClient MyClient
         {
             get

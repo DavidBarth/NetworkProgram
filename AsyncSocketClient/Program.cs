@@ -5,6 +5,8 @@ namespace AsyncSocketClient
 {
     class Program
     {
+        private const string exitString = "<EXIT>";
+
         static void Main(string[] args)
         {
             BelfastSocketClient client = new BelfastSocketClient();
@@ -23,8 +25,15 @@ namespace AsyncSocketClient
             }
             client.ConnectToServer();
 
-            string exitString = null;
-            do { exitString = Console.ReadLine(); } while (exitString != "<EXIT>");
+            string userInput = null;
+            do
+            {
+                userInput = Console.ReadLine();
+                if (userInput.Trim() != exitString)
+                {
+                    client.SendDataToServer(userInput);
+                }
+            } while (userInput != exitString);
         }
     }
 }
