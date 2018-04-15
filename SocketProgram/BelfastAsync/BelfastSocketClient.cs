@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BelfastSocketAsync
 {
-    public class BelfastSocketClient
+    public class BelfastSocketClient : ISocketClient
     {
         IPAddress myServerIPAddress;
         int serverPort;
@@ -110,7 +110,7 @@ namespace BelfastSocketAsync
             }
         }
 
-        private async void ReadDataAsync(TcpClient myClient)
+        internal async void ReadDataAsync(TcpClient myClient)
         {
             try
             {
@@ -119,9 +119,9 @@ namespace BelfastSocketAsync
                 int readByteCount = 0;
                 while (true)
                 {
-                     readByteCount = await streamReader.ReadAsync(buffer, 0, buffer.Length);
+                    readByteCount = await streamReader.ReadAsync(buffer, 0, buffer.Length);
 
-                    if(readByteCount <= 0)
+                    if (readByteCount <= 0)
                     {
                         Console.WriteLine("Disconnected from server");
                         myClient.Close();
@@ -131,7 +131,7 @@ namespace BelfastSocketAsync
                     Console.WriteLine(string.Format("Bytes sent: {0} , String: {1} ", readByteCount.ToString(), new string(buffer)));
                 }
                 Array.Clear(buffer, 0, buffer.Length);
-            }  
+            }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());

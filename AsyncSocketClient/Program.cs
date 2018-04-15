@@ -9,7 +9,7 @@ namespace AsyncSocketClient
 
         static void Main(string[] args)
         {
-            BelfastSocketClient client = new BelfastSocketClient();
+            ISocketClient client = new BelfastSocketClient();
             Console.WriteLine("Please type in a valid IP address and press enter!");
             string ipAddress = Console.ReadLine();
             Console.WriteLine("Please type in a valid Port number 0 - 65535");
