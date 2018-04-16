@@ -8,5 +8,6 @@ namespace BelfastSocketAsync
         Task ConnectToServer();
         bool SetServerIPAddress(string ipAddress);
         bool SetPortNumber(string portNumber);
+        void CloseAndDisconnect();
     }
 }
