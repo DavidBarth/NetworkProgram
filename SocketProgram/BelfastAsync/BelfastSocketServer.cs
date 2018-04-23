@@ -20,6 +20,7 @@ namespace BelfastSocketAsync
         private bool isRunning;
 
         public event EventHandler<ClientConnectedEventArgs> ClientConnected;
+        public event EventHandler<TextReceivedEventArgs> MessageReceived;
 
         public BelfastSocketServer()
         {
@@ -108,7 +109,6 @@ namespace BelfastSocketAsync
                     Debug.WriteLine("-----Ready to Read");
                     int readReturn = await networkStreamReader.ReadAsync(buff, 0, buff.Length);
                     Debug.WriteLine("Returned: " + readReturn);
-
                     if(readReturn == 0)
                     {
                         Debug.WriteLine("Socket disconnected");
@@ -118,6 +118,10 @@ namespace BelfastSocketAsync
 
                     string receivedText = new string(buff);
                     Debug.WriteLine("-----Received text: " + receivedText);
+                    MessageReceived?.Invoke(this, 
+                        new TextReceivedEventArgs(returnedByAccept.Client.RemoteEndPoint.ToString()
+                        ,receivedText));
+
 
                     Array.Clear(buff, 0, buff.Length);
 

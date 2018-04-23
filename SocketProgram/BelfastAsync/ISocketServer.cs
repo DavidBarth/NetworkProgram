@@ -11,6 +11,7 @@ namespace BelfastSocketAsync
         //make method async to be able to perfom async read op in the method
         void SendToAllClients(string message);
         event EventHandler<ClientConnectedEventArgs>  ClientConnected;
+        event EventHandler<TextReceivedEventArgs> MessageReceived;
         
     }
 }

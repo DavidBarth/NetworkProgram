@@ -43,6 +43,7 @@
     <Compile Include="BelfastSocketClient.cs" />
     <Compile Include="BelfastSocketServer.cs" />
     <Compile Include="ClientConnectedEventArgs.cs" />
+    <Compile Include="TextReceivedEventArgs.cs" />
     <Compile Include="ISocketClient.cs" />
     <Compile Include="ISocketServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
