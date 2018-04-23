@@ -19,6 +19,8 @@ namespace BelfastSocketAsync
 
         private bool isRunning;
 
+        public event EventHandler<ClientConnectedEventArgs> ClientConnected;
+
         public BelfastSocketServer()
         {
             myClients = new List<TcpClient>(); //collection of client objects
@@ -52,8 +54,11 @@ namespace BelfastSocketAsync
                 {
                     var returnedByAccept = await myTCPListener.AcceptTcpClientAsync(); //returns a TCPClient (helper class)
                     myClients.Add(returnedByAccept);
+
                     Debug.WriteLine(string.Format("Client connected successfully, number of clients connected {0} - "
                         ,myClients.Count, returnedByAccept.Client.RemoteEndPoint));
+
+                    ClientConnected?.Invoke(this, new ClientConnectedEventArgs(returnedByAccept.Client.RemoteEndPoint.ToString()));
 
                     TakeCareOfTcpClient(returnedByAccept);
                 }
