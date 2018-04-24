@@ -30,3 +30,5 @@ C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\AsyncSocke
 C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\AsyncSocketClient\obj\Debug\AsyncSocketClient.csprojResolveAssemblyReference.cache
 C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\AsyncSocketClient\obj\Debug\AsyncSocketClient.exe
 C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\AsyncSocketClient\obj\Debug\AsyncSocketClient.pdb
+C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\AsyncSocketClient\obj\Debug\AsyncSocketClient.ClientForm.resources
+C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\AsyncSocketClient\obj\Debug\AsyncSocketClient.csproj.GenerateResource.Cache
