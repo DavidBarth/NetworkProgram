@@ -33,13 +33,17 @@
             this.messageTextBox = new System.Windows.Forms.TextBox();
             this.sendAllButton = new System.Windows.Forms.Button();
             this.stopServerButton = new System.Windows.Forms.Button();
+            this.clientConnectedLabel = new System.Windows.Forms.Label();
+            this.clientConnectedTextBox = new System.Windows.Forms.TextBox();
+            this.messageReceivedTextBox = new System.Windows.Forms.TextBox();
+            this.messageReceivedLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonAccceptAsync
             // 
-            this.buttonAccceptAsync.Location = new System.Drawing.Point(29, 12);
+            this.buttonAccceptAsync.Location = new System.Drawing.Point(29, 23);
             this.buttonAccceptAsync.Name = "buttonAccceptAsync";
-            this.buttonAccceptAsync.Size = new System.Drawing.Size(233, 23);
+            this.buttonAccceptAsync.Size = new System.Drawing.Size(482, 23);
             this.buttonAccceptAsync.TabIndex = 0;
             this.buttonAccceptAsync.Text = "Accept Incoming Connection ";
             this.buttonAccceptAsync.UseVisualStyleBackColor = true;
@@ -58,12 +62,12 @@
             // 
             this.messageTextBox.Location = new System.Drawing.Point(83, 52);
             this.messageTextBox.Name = "messageTextBox";
-            this.messageTextBox.Size = new System.Drawing.Size(179, 20);
+            this.messageTextBox.Size = new System.Drawing.Size(428, 20);
             this.messageTextBox.TabIndex = 2;
             // 
             // sendAllButton
             // 
-            this.sendAllButton.Location = new System.Drawing.Point(187, 93);
+            this.sendAllButton.Location = new System.Drawing.Point(436, 78);
             this.sendAllButton.Name = "sendAllButton";
             this.sendAllButton.Size = new System.Drawing.Size(75, 23);
             this.sendAllButton.TabIndex = 3;
@@ -81,11 +85,47 @@
             this.stopServerButton.UseVisualStyleBackColor = true;
             this.stopServerButton.Click += new System.EventHandler(this.stopServerButton_Click);
             // 
+            // clientConnectedLabel
+            // 
+            this.clientConnectedLabel.AutoSize = true;
+            this.clientConnectedLabel.Location = new System.Drawing.Point(26, 97);
+            this.clientConnectedLabel.Name = "clientConnectedLabel";
+            this.clientConnectedLabel.Size = new System.Drawing.Size(94, 13);
+            this.clientConnectedLabel.TabIndex = 5;
+            this.clientConnectedLabel.Text = "Client Connected: ";
+            // 
+            // clientConnectedTextBox
+            // 
+            this.clientConnectedTextBox.Location = new System.Drawing.Point(29, 113);
+            this.clientConnectedTextBox.Name = "clientConnectedTextBox";
+            this.clientConnectedTextBox.Size = new System.Drawing.Size(482, 20);
+            this.clientConnectedTextBox.TabIndex = 6;
+            // 
+            // messageReceivedTextBox
+            // 
+            this.messageReceivedTextBox.Location = new System.Drawing.Point(29, 168);
+            this.messageReceivedTextBox.Name = "messageReceivedTextBox";
+            this.messageReceivedTextBox.Size = new System.Drawing.Size(482, 20);
+            this.messageReceivedTextBox.TabIndex = 8;
+            // 
+            // messageReceivedLabel
+            // 
+            this.messageReceivedLabel.AutoSize = true;
+            this.messageReceivedLabel.Location = new System.Drawing.Point(26, 151);
+            this.messageReceivedLabel.Name = "messageReceivedLabel";
+            this.messageReceivedLabel.Size = new System.Drawing.Size(105, 13);
+            this.messageReceivedLabel.TabIndex = 7;
+            this.messageReceivedLabel.Text = "Message Received: ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(540, 262);
+            this.Controls.Add(this.messageReceivedTextBox);
+            this.Controls.Add(this.messageReceivedLabel);
+            this.Controls.Add(this.clientConnectedTextBox);
+            this.Controls.Add(this.clientConnectedLabel);
             this.Controls.Add(this.stopServerButton);
             this.Controls.Add(this.sendAllButton);
             this.Controls.Add(this.messageTextBox);
@@ -106,6 +146,10 @@
         private System.Windows.Forms.TextBox messageTextBox;
         private System.Windows.Forms.Button sendAllButton;
         private System.Windows.Forms.Button stopServerButton;
+        private System.Windows.Forms.Label clientConnectedLabel;
+        private System.Windows.Forms.TextBox clientConnectedTextBox;
+        private System.Windows.Forms.TextBox messageReceivedTextBox;
+        private System.Windows.Forms.Label messageReceivedLabel;
     }
 }
 

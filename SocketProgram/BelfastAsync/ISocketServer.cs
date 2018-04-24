@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 
 namespace BelfastSocketAsync
 {
@@ -9,6 +10,8 @@ namespace BelfastSocketAsync
         void StopServer();
         //make method async to be able to perfom async read op in the method
         void SendToAllClients(string message);
+        event EventHandler<ClientConnectedEventArgs>  ClientConnected;
+        event EventHandler<TextReceivedEventArgs> MessageReceived;
         
     }
 }

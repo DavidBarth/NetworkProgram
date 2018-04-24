@@ -19,6 +19,9 @@ namespace BelfastSocketAsync
 
         private bool isRunning;
 
+        public event EventHandler<ClientConnectedEventArgs> ClientConnected;
+        public event EventHandler<TextReceivedEventArgs> MessageReceived;
+
         public BelfastSocketServer()
         {
             myClients = new List<TcpClient>(); //collection of client objects
@@ -52,8 +55,11 @@ namespace BelfastSocketAsync
                 {
                     var returnedByAccept = await myTCPListener.AcceptTcpClientAsync(); //returns a TCPClient (helper class)
                     myClients.Add(returnedByAccept);
+
                     Debug.WriteLine(string.Format("Client connected successfully, number of clients connected {0} - "
                         ,myClients.Count, returnedByAccept.Client.RemoteEndPoint));
+
+                    ClientConnected?.Invoke(this, new ClientConnectedEventArgs(returnedByAccept.Client.RemoteEndPoint.ToString()));
 
                     TakeCareOfTcpClient(returnedByAccept);
                 }
@@ -103,7 +109,6 @@ namespace BelfastSocketAsync
                     Debug.WriteLine("-----Ready to Read");
                     int readReturn = await networkStreamReader.ReadAsync(buff, 0, buff.Length);
                     Debug.WriteLine("Returned: " + readReturn);
-
                     if(readReturn == 0)
                     {
                         Debug.WriteLine("Socket disconnected");
@@ -113,6 +118,10 @@ namespace BelfastSocketAsync
 
                     string receivedText = new string(buff);
                     Debug.WriteLine("-----Received text: " + receivedText);
+                    MessageReceived?.Invoke(this, 
+                        new TextReceivedEventArgs(returnedByAccept.Client.RemoteEndPoint.ToString()
+                        ,receivedText));
+
 
                     Array.Clear(buff, 0, buff.Length);
 
