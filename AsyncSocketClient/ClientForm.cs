@@ -60,8 +60,11 @@ namespace AsyncSocketClient
 
         private void messageToSendTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            user.Message = messageToSendTextBox.Text;
-            socketClient.SendDataToServer(user);
+            if (e.KeyData == Keys.Enter)
+            {
+                user.Message = messageToSendTextBox.Text;
+                socketClient.SendDataToServer(user);
+            }
         }
     }
 }
