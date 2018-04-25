@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Common;
+using System;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
 
 namespace BelfastSocketAsync
@@ -93,23 +95,6 @@ namespace BelfastSocketAsync
             }
         }
 
-        public async Task SendDataToServer(string userInput)
-        {
-            if (string.IsNullOrEmpty(userInput))
-            {
-                Console.WriteLine("Empty string supplied to send method.");
-                return;
-            }
-            if (myClient != null && myClient.Connected)
-            {
-                StreamWriter clientStreamWriter = new StreamWriter(MyClient.GetStream());
-                clientStreamWriter.AutoFlush = true;
-
-                await clientStreamWriter.WriteAsync(userInput);
-                Console.WriteLine("Data sent...");
-            }
-        }
-
         internal async void ReadDataAsync(TcpClient myClient)
         {
             try
@@ -143,6 +128,33 @@ namespace BelfastSocketAsync
             if (myClient != null && !myClient.Connected)
             {
                 myClient.Close();
+            }
+        }
+
+        public async Task SendDataToServer(User user)
+        {
+
+            var byteArrayUser = ObjectToByteArray(user);
+
+            var charArrayUser = BitConverter.ToChar(byteArrayUser, 0);
+            if (myClient != null && myClient.Connected)
+            {
+                StreamWriter clientStreamWriter = new StreamWriter(MyClient.GetStream());
+                clientStreamWriter.AutoFlush = true;
+
+                await clientStreamWriter.WriteAsync(charArrayUser);
+                Console.WriteLine("Data sent...");
+            }
+        }
+
+        byte[] ObjectToByteArray(User user)
+        {
+            if(user == null) { return null; }
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (MemoryStream ms = new MemoryStream())
+            {
+                formatter.Serialize(ms, user);
+                return ms.ToArray();
             }
         }
     }

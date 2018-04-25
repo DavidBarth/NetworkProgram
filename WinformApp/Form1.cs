@@ -6,7 +6,7 @@ namespace WinFormApp
 {
     public partial class Form1 : Form
     {
-        BelfastSocketServer server;
+        ISocketServer server;
         public Form1()
         {
             InitializeComponent();

@@ -1,4 +1,5 @@
 ﻿using BelfastSocketAsync;
+using Common;
 using System;
 using System.Net;
 using System.Windows.Forms;
@@ -9,11 +10,14 @@ namespace AsyncSocketClient
     {
         private const string staticPortNumber = "23000";
 
+        private User user;
+
         private ISocketClient socketClient;
         public ClientForm()
         {
             InitializeComponent();
             InitializeClient();
+            user = new User();
         }
 
         private void InitializeClient()
@@ -46,10 +50,18 @@ namespace AsyncSocketClient
             throw new Exception("No N/W adapters with an IPv4 address in the system!");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            string message = messageToSendTextBox.Text;
-            socketClient.SendDataToServer(message);
+            if(e.KeyData == Keys.Enter)
+            {
+                user.Name = userNameTextBox.Text; 
+            }
+        }
+
+        private void messageToSendTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            user.Message = messageToSendTextBox.Text;
+            socketClient.SendDataToServer(user);
         }
     }
 }

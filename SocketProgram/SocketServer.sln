@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BelfastSocketAsync", "Belfa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncSocketClient", "..\AsyncSocketClient\AsyncSocketClient.csproj", "{C77B6EAA-9842-4737-9245-06558F5021FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "..\Common\Common.csproj", "{5F0A6C30-816B-4EF2-95F9-6F018CC30B59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{C77B6EAA-9842-4737-9245-06558F5021FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C77B6EAA-9842-4737-9245-06558F5021FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C77B6EAA-9842-4737-9245-06558F5021FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F0A6C30-816B-4EF2-95F9-6F018CC30B59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F0A6C30-816B-4EF2-95F9-6F018CC30B59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F0A6C30-816B-4EF2-95F9-6F018CC30B59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F0A6C30-816B-4EF2-95F9-6F018CC30B59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

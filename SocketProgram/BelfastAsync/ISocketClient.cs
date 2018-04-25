@@ -1,10 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using Common;
+using System.Threading.Tasks;
 
 namespace BelfastSocketAsync
 {
     public interface ISocketClient
     {
-        Task SendDataToServer(string userInput);
+        Task SendDataToServer(User user);
         Task ConnectToServer();
         bool SetServerIPAddress(string ipAddress);
         bool SetPortNumber(string portNumber);
