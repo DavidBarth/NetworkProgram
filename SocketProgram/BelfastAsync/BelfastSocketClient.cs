@@ -4,6 +4,7 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace BelfastSocketAsync
@@ -134,9 +135,9 @@ namespace BelfastSocketAsync
         public async Task SendDataToServer(User user)
         {
 
-            var byteArrayUser = ObjectToByteArray(user);
+            byte[] byteArrayUser = ObjectToByteArray(user);
 
-            var charArrayUser = BitConverter.ToChar(byteArrayUser, 0);
+            char[] charArrayUser = Encoding.Unicode.GetChars(byteArrayUser);
             if (myClient != null && myClient.Connected)
             {
                 StreamWriter clientStreamWriter = new StreamWriter(MyClient.GetStream());

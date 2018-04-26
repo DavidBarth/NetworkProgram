@@ -42,3 +42,5 @@ C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\WinFormApp
 C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\WinFormApp\obj\Debug\WinFormApp.Form1.resources
 C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\WinFormApp\obj\Debug\WinFormApp.Properties.Resources.resources
 C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\WinFormApp\obj\Debug\AsyncSocketServer.csproj.GenerateResource.Cache
+C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\WinFormApp\bin\Debug\Common.dll
+C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\WinFormApp\bin\Debug\Common.pdb

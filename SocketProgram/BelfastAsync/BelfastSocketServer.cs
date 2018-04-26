@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Common;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 
 namespace BelfastSocketAsync
@@ -116,11 +118,12 @@ namespace BelfastSocketAsync
                         break;
                     }
 
-                    string receivedText = new string(buff);
-                    Debug.WriteLine("-----Received text: " + receivedText);
+                    User user = CharArrayToUser(buff);
+                    //string receivedText = new string(buff);
+                    Debug.WriteLine("-----Received text: " +user.Message);
                     MessageReceived?.Invoke(this, 
                         new TextReceivedEventArgs(returnedByAccept.Client.RemoteEndPoint.ToString()
-                        ,receivedText));
+                        , user.Message));
 
 
                     Array.Clear(buff, 0, buff.Length);
@@ -132,6 +135,18 @@ namespace BelfastSocketAsync
                 RemoveConnectedClient(returnedByAccept);
                 Debug.WriteLine(e.ToString());
             }
+        }
+
+        private User CharArrayToUser(char[] array)
+        {
+            byte[] byteArray = Encoding.Unicode.GetBytes(array);
+
+            MemoryStream stream = new MemoryStream();
+            BinaryFormatter formatter = new BinaryFormatter();
+            stream.Write(byteArray, 0, array.Length);
+            stream.Seek(0, SeekOrigin.Begin);
+            User user = (User)formatter.Deserialize(stream);
+            return user;
         }
 
         private void RemoveConnectedClient(TcpClient returnedByAccept)

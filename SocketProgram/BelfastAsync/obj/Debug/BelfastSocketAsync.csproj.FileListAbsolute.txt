@@ -17,3 +17,5 @@ C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\SocketProg
 C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\SocketProgram\BelfastAsync\obj\Debug\BelfastSocketAsync.csprojResolveAssemblyReference.cache
 C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\SocketProgram\BelfastAsync\obj\Debug\BelfastAsync.dll
 C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\SocketProgram\BelfastAsync\obj\Debug\BelfastAsync.pdb
+C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\SocketProgram\BelfastAsync\bin\Debug\Common.dll
+C:\Users\dave\Documents\Visual Studio 2015\Projects\NetworkProgramNew\SocketProgram\BelfastAsync\bin\Debug\Common.pdb
